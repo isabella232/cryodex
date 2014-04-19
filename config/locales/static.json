@@ -1,0 +1,83 @@
+{
+  "static": {
+    "about": {
+      "title": {
+        "en": "Encrypted group sharing for everyone."
+      },
+
+      "subslogan": {
+        "en": "Create 100% private groups for your friends, family and colleagues in less than a minute."
+      },
+
+      "explanatory_steps": {
+        "1": {
+          "title": {
+            "en": "Your posts are encrypted before they even leave your computer."
+          },
+
+          "explanation": {
+            "en": "This is done via AES-256 symmetric and ECC-384 asymmetric encryption."
+          }
+        },
+
+        "2": {
+          "title": {
+            "en": "Only your group members have the keys to decrypt your posts."
+          },
+
+          "explanation": {
+            "en": "No one else has access. Not ad agencies. Not third parties. Not even us."
+          }
+        },
+
+        "3": {
+          "title": {
+            "en": "Your password is never stored on our servers."
+          },
+
+          "explanation": {
+            "en": "It doesn't even get sent across the Internet. This is done with the Secure Remote Password protocol."
+          }
+        }
+      },
+
+      "sign_up": {
+        "en": "Sign up"
+      }
+    },
+
+    "sign_up": {
+      "oops": {
+        "title": {
+          "en" : "Oops! You caught us before we're ready."
+        },
+
+        "subtitle": {
+          "en": "Leave us your email and we'll let you know when Syme is out."
+        },
+
+        "email_input_placeholder": {
+          "en": "Your email"
+        },
+
+        "email_submit": {
+          "en": "Keep me posted"
+        }
+      },
+
+      "email_sent": {
+        "title": {
+          "en": "Thank you! We'll keep you notified."
+        },
+
+        "subtitle": {
+          "en": "Help us get the word out:"
+        },
+
+        "tweet_text": {
+          "en": "Syme, the encrypted social network. Because it's nobody's business but yours."
+        }
+      }
+    }
+  }
+}

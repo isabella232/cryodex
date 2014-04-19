@@ -1,0 +1,25 @@
+{
+  "system": {
+    "error": {
+      "404": {
+        "title": {
+          "en": "Not Found"
+        },
+
+        "go_back": {
+          "en": "Don't worry, it's probably our fault. Please try to %sgo back%s"
+        }
+      }
+    },
+
+    "auth": {
+      "sign_up": {
+        "en": "Sign up"
+      },
+
+      "log_in": {
+        "en": "Log in"
+      }
+    }
+  }
+}

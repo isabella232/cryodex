@@ -1,0 +1,142 @@
+%body#pricing
+  = haml :'layout/navbar_static'
+
+  #first-option{ style: 'margin: 0' }
+    .container
+      .row.faq
+        .col-md-12
+          .row.header
+            .col-md-12
+              %h3 General FAQ
+          .row.questions
+            .col-md-6
+              .question
+                %strong What makes Syme different from <i>[insert group sharing application here]</i>?
+                %p
+                  Everything you share on Syme is encrypted before it leaves your computer. Only your group members hold the key. This means that we never have access to the content that you share.
+              .question
+                %strong Isn’t web security really hard? How can anything in the browser environment ever be secure or private?
+                %p
+                  We admit it’s really, really hard. Simply put, no web privacy or security measure can ever be 100% efficient.
+                %p However, just because it’s hard doesn’t mean it’s not worth working on. Cryptography is still one of the best ways to enhance our privacy when we share online.
+                %p There are people working on web privacy and security from many angles. Syme’s main contribution [geeky jargon alert] lies in exploring the feasibility of a decentralized key infrastructure that uses end-to-end encryption to enable persistent multiparty communication and secure key exchanges on minimally trusted servers. Basically, we’re trying to create a group sharing tool where the service provider never has access to what users share.
+              .question
+                %strong Who's working on this?
+                %p
+                  Syme’s founders are <a href="http://twitter.com/louismullie" target="_blank">Louis</a>, <a href="http://twitter.com/jonhershon" target="_blank">Jon</a> and <a href="http://twitter.com/chris_marois" target="_blank">Chris</a>. We’re a three-person team based in Montreal, Canada.
+              .question
+                %strong Can I get in touch with you?
+                %p
+                  Of course. We’d love to hear from you. Tweet us <a href="http://twitter.com/symeapp" target="_blank">@symeapp</a> or email team [at] getsyme [dot] com
+            .col-md-6
+              .question
+                %strong Where are your servers located?
+                %p
+                  Our servers are located in Canada, a recognized leader in privacy legislation. Canada is governed by the Personal Information Protection and Electronic Documents Act (PIPEDA), a European Union approved privacy law.
+              .question
+                %strong Is Syme in active development?
+                %p
+                  Yes. We’re currently in public beta and are constantly working to make Syme more secure, easy to use, and beautiful.
+              .question
+                %strong Is it open source?
+                %p
+                  Soon. We’ve already started releasing our code on <a href="http://www.github.com/symeapp" target="_blank">Github</a>. You can follow us on <a href="http://www.twitter.com/symeapp" target="_blank">Twitter</a> and <a href="http://www.facebook.com/symeapp" target="_blank">Facebook</a> for news on the latest releases.
+              .question
+                %strong Will you release Syme on other platforms?
+                %p Syme will soon be available on Firefox and Safari in addition to Chrome. We will look into building mobile and desktop apps in the near future.
+              .question
+                %strong Why the name?
+                %p
+                  Syme is the name of a character from George Orwell’s <i>Nineteen Eighty-Four</i>. Syme was “vaporized” by the Party because he remained a freethinking intellectual.
+
+  #first-option{ style: 'margin: 0' }
+    .container
+      .row.faq
+        .col-md-12
+          .row.header
+            .col-md-12
+              %h3 Security FAQ
+          .row.questions
+            .col-md-6
+              .question
+                %strong Why is Syme a browser extension and not just a regular website?
+                %p
+                  The code signing afforded by browser extensions lets us make sure that no one tampers with Syme’s software before it is delivered to your browser.
+              .question
+                %strong Where does the encryption/decryption take place?
+                %p
+                  All encryption and decryption takes place in the browser.
+              .question
+                %strong Are messages encrypted when they are stored on my device?
+                %p
+                  Yes. Messages stored on your device remain encrypted.
+              .question
+                %strong What security features does Syme provide?
+                %p
+                  Syme provides message confidentiality, integrity and authentication.
+              .question
+                %strong Is Syme HIPAA-compliant?
+                %p
+                  Yes. The level of encryption that Syme uses meets the requirements defined in the Health Information Technology for Economic and Clinical Health (HITECH) Act, and is therefore compliant with the Health Insurance Portability and Accountability Act (HIPAA).
+
+              .question
+                %strong What logs do you keep?
+                %p
+                  We keep server logs that contain basic information about which requests are made to our sever (timestamp, IP address, HTTP route and server response code). These are securely erased every 24 hours. We also keep standard error logs for our database storage, session storage, and message queuing systems.
+              .question
+                %strong Do you have a white paper?
+                %p
+                  Yes. You can find it on <a href="http://github.com/symeapp/syme" target="_blank">Github</a>.
+              .question
+                %strong What happens when I delete my account?
+
+                %p
+                  Account data is deleted from our disks and overwritten several times with random bytes. This includes your email, name, every group you’ve created and everything you’ve ever posted or uploaded to Syme.
+            .col-md-6
+              .question
+                %strong What are the security features that Syme doesn’t provide?
+                %p
+                  Syme does not provide anonymity or plausible deniability.
+              .question
+                %strong{ style: 'margin-bottom: 1rem; display: block;' }
+                  What cryptographic tools does Syme use?
+
+                %ul
+                  %li
+                    All requests to our server are encrypted via secure connection (HTTPS).
+
+                  %li
+                    The Password-Based Key Derivation Function (PBKDF2) is used to derive strong keys from user passwords.
+
+                  %li
+                    The Stanford Secure Remote Password (SRP) protocol is used to provide secure authentication.
+
+                  %li
+                    Exchange of keys between group members is done via an Elliptic Curve Diffie-Hellman (ECDH) key exchange (384 bits).
+
+                  %li
+                    Key fingerprints allow mutual authentication of key exchanges through an outside channel.
+
+                  %li
+                    Shared content is encrypted using a combination of AES symmetric encryption (256 bits) and ECC asymmetric encryption (384 bits).
+
+              .question
+                %strong Is Syme NSA-proof?
+                %p
+                  In short, no. Syme is probably not the best way to protect yourself against a targeted attack from a governmental adversary like the NSA.
+                %p
+                  No single tool is NSA-proof if you’re a target.
+
+              .question
+                %strong What do you do for metadata?
+                %p
+                  We do not have access to your group content, but we do have access to some metadata, such as connection to the service, time of posts, the IDs of users you communicate with, and sizes of files transfered.
+
+                %p
+                  We want to distance ourselves from your metadata as much as possible, and are currently working on ways of doing this.
+              .question
+                %strong What is the difference between the Syme’s protocol and other protocols such as PGP and OTR?
+                %p
+                  PGP and OTR are two mature and well-reviewed protocols. They have different aims and use cases when compared to Syme. PGP-based apps are good for asynchronous message exchanges but require users to manually manage their keys, which makes them less user-friendly and portable. OTR-based apps provide perfect forward secrecy and deniability, but are only suitable for situations where users are simultaneously online, such as instant messaging.
+
+  = haml :'layout/footer'

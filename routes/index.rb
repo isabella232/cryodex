@@ -1,16 +1,95 @@
-['/', '/login', '/show/:id', '/create/:id', '/list', '/upload'].each do |path|
-  
-  get path do
+require 'securerandom'
+require 'digest'
 
-    if path == '/show/:id' && params[:id]
-      session[:redirect_space_id] = params[:id]
-    end
+not_found do
+  haml :notfound
+end
+
+get '/' do
+  @user_id = Digest::SHA2.hexdigest(request.ip.to_s)
+  Analytics.track(user_id: @user_id, event: 'view_index')
+  haml :index
+end
+
+get '/blog' do
+  
+  file = File.join('.', 'posts', 'posts.yml')
+  
+  @posts = YAML.load(File.read(file))
+  
+  haml :blog
+  
+end
+
+get '/blog/:path' do |path|
+  
+  slug = path.split('.').first
+  
+  file = File.join('.', 'posts', 'posts.yml')
+  @posts = YAML.load(File.read(file))
+
+  post = @posts.values.select { |p| p['slug'] == slug }
+  @post = post.first
+  
+  not_found if post.empty?
+  date = @posts.key(@post)
+
+  path = "./posts/#{date}.md"
+  not_found unless File.readable?(path)
+  
+  text = File.read(path)
+  
+  formatter = Slodown::Formatter.new(text)
+  @content = formatter.complete.to_s
+  
+  time = Date.parse(date).to_time
+  @date = time.strftime("%A %B #{time.day.ordinalize}")
+  
+  haml :blogpost
+  
+end
+
+get '/unsubscribe/:email/:token' do |email, token|
+  
+  begin
     
-    content_type 'text/html'
+    warn email.inspect
+    warn Base64.strict_decode64(email)
+      
+    email = Base64.strict_decode64(email)
+    
+    user = begin
+      User.find_by(email: email)
+    rescue Mongoid::Errors::DocumentNotFound
+      redirect '/'
+    end
   
-    layout = File.read(settings.layout_file)
-    Haml::Engine.new(layout).render
+    recipient = CGI.escape(Base64.strict_encode64(email))
+    
+    hash = Digest::SHA2.hexdigest(recipient + settings.email_salt)
+  
+    warn hash.inspect
+    
+    raise if token != hash
+  
+    warn user.inspect
+    
+    user.unsubscribed = true
+    user.save!
 
+  rescue
+    
+    redirect '/'
+    
   end
+  
+  haml :unsubscribe, layout: false
 
+end
+
+get '/*' do |path|
+  not_found unless ['blog', 'comingsoon', 'faq', 'notfound', 'security'].include?(path)
+  @user_id = Digest::SHA2.hexdigest(request.ip.to_s)
+  Analytics.track(user_id: @user_id, event: 'view_' + path)
+  haml path.to_sym
 end

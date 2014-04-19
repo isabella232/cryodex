@@ -1,6 +1,8 @@
-require 'bundler'
-  
-$root = File.dirname(__FILE__)
-  
-Bundler.require
-require './app'
+require 'rspec/core/rake_task'
+include Rake::DSL
+
+task default: :spec
+
+RSpec::Core::RakeTask.new do |t|
+   t.pattern = "./specs/*.rb"
+end

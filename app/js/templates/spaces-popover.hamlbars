@@ -1,8 +1,0 @@
-.popover-inside
-  .popover-header
-
-  {{#if is_empty}}
-  .popover-wrapper You have no spaces yet!
-  {{/if}}
-
-  %ul#spaces-list

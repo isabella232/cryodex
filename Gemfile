@@ -1,29 +1,32 @@
 source 'https://rubygems.org'
 
 # * Application * #
-gem 'rack'
+gem 'rack', '>= 1.5.2'
 gem 'sinatra'
-gem 'rabl'
-gem 'oj'
 gem 'thin'
 gem 'foreman'
 
+# * Security * #
+gem 'rack-ssl',
+  require: 'rack/ssl'
+gem 'content-security-policy'
+gem 'rack_csrf',
+  require: 'rack/csrf'
+gem 'rack-attack',
+  require: 'rack/attack'
+gem 'srp-rb'
+
+# * Database * #
 gem 'mongo'
 gem 'bson_ext'
 gem 'mongoid'
-# gem 'aws'
+gem 'memcache-client'
 
-gem 'dalli'
-
-gem 'omniauth'
-gem 'omniauth-github'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-
-gem 'gravatar-ultimate'
-gem 'mixpanel-ruby'
-
+# * Extensions * #
 gem 'pony'
+gem 'stripe'
+gem 'analytics-ruby',
+  require: 'analytics-ruby'
 
 # * Deployment * #
 gem 'capistrano'
@@ -31,10 +34,12 @@ gem 'rvm-capistrano'
 
 # * Assets * #
 gem 'sprockets'
+gem 'sprockets-sass'
 gem 'sass'
-gem 'haml'
+gem 'slodown'
 
-gem 'handlebars_assets'
+gem 'guard'
+gem 'guard-haml'
 
 gem 'json'
 
@@ -42,10 +47,15 @@ gem 'closure-compiler'
 
 gem 'therubyracer',
   require: 'v8'
+  
+
+gem 'rack-noie', 
+  require: 'noie'
 
 # * Development * #
 group :development do
   gem 'rake'
+  gem 'shotgun'
+  gem 'rack-nocache',
+    require: 'rack/nocache'
 end
-
-gem 'terminal-table'

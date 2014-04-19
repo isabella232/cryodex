@@ -1,54 +1,53 @@
 require 'bundler/setup'
 require 'sinatra/base'
-require 'securerandom'
 
-$env = ENV['RACK_ENV']
 $root = File.dirname(__FILE__)
 
-# Setup server-side sessions.
-require 'dalli'
-require 'rack/session/dalli'
+case $env = ENV['RACK_ENV'].downcase.to_sym
+when :production
 
-use Rack::Session::Dalli,
-  key: 'session',
-  cache: Dalli::Client.new,
-  expire_after: 60 * 60 * 24 * 3
+  # Enable GZIP compression.
+  use Rack::Deflater
 
-# Require the main application class.
-require './app'
+  # Enforce SSL for all connections.
+  # require 'rack/ssl'
+  # use Rack::SSL
 
-# Main application access point.
-map '/' do
-  run Cryodex::Application
+when :development
+
+
+
 end
 
-# Handlebars configuration
-HandlebarsAssets::Config.compiler = 'handlebars.min.js'
-HandlebarsAssets::Config.compiler_path =
-File.join($root, 'app', 'js', 'vendor')
+# Setup server-side sessions.
+use Rack::Session::Memcache,
+  key: 'session',
+  expire_after: 60 * 60 * 24 * 3,
+  secure: $env == :production,
+  sidbits: 256,
+  path: '/',
+  secret: '8gr718743g8738bf8f143'
 
-# For development, serve assets.
+use Rack::Protection, except: [:http_origin, :remote_token]
+
+require './app'
+
 map '/assets' do
 
   environment = Sprockets::Environment.new
 
-  if $env != :development
+  environment.append_path 'public/js'
+  environment.append_path 'public/css'
 
-    #environment.js_compressor = Closure::Compiler.new
-    #environment.css_compressor = :sass
-
-    HandlebarsAssets::Config.compiler = 'handlebars.min.js'
-    HandlebarsAssets::Config.compiler_path =
-    File.join($root, 'app', 'js', 'vendor')
-
+  if $env == :production
+    environment.js_compressor = Closure::Compiler.new
+    environment.css_compressor = :sass
   end
-
-  environment.append_path 'app/js'
-  environment.append_path 'app/css'
-  environment.append_path 'app/fonts'
-
-  environment.append_path HandlebarsAssets.path
 
   run environment
 
 end
+
+use Rack::NoIE, { redirect: 'http://whatbrowser.org/', minimum: 9 }
+
+run SymeShowcase::Application

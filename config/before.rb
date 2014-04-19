@@ -1,9 +1,11 @@
 before do
-
-  content_type 'application/json'
-
-  user_id = session[:user_id]
-
-  @user = User.find(user_id) if user_id
-
+  
+  # Obfuscate the server type
+  response.headers['Server'] = 'syme'
+  
+  session[:id] ||= SecureRandom.uuid
+  @user_id = session[:id]
+  last_modified settings.last_modified
+  expires 60, :public, :must_revalidate
+  
 end

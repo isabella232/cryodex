@@ -1,35 +1,31 @@
-module Cryodex
+module SymeShowcase
 
+  require 'securerandom'
   require './base'
 
   class Application < Base
+    
+    require 'base64'
 
-    VERSION = '0.3.6'
+    Bundler.require :default,
+      settings.environment
 
-    Bundler.require :default, settings.environment
+    # Initialize segment.io analytics
+    Analytics.init(secret: '193d1167c7e3e40725c3efafa45e1b03')
 
-    # Configure with globals defined in config.ru
-    configure do
-      set root:         $root
-      set store:        $store
-      set environment:  $env
-    end
-
-    configure { require_all 'config' }
+    configure { require_all 'config'  }
     helpers   { require_all 'helpers' }
 
-    require_directory 'models'
-    require_directory 'observers'
-    require_directory 'generators'
+    Dir['./models/*.rb'].each { |file| require file }
+    Dir['./helpers/*.rb'].each { |file| require file }
+    Dir['./observers/*.rb'].each { |file| require file }
 
     require_all 'routes'
 
-    Rabl.register!
-    
-    Mongoid.observers = MessageObserver,
-    MemberObserver, UserObserver
+    Mongoid.observers = SubscriberObserver
+
     Mongoid.instantiate_observers
-    
+
   end
 
 end

@@ -1,0 +1,27 @@
+%body#coming-soon
+  .container
+    .row.info
+      .col-md-12
+        %h1
+          %a{:href => "/"} Syme
+        %h3 Thanks for signing up!
+        %h4{style: 'color: gray'}
+          You've been put on the waiting list.
+    .row.info
+      .col-md-12
+        %a.twitter-follow-button{"data-lang" => "en", "data-show-count" => "false", :href => "https://twitter.com/symeapp", :'data-size' => 'large'} Follow @symeapp
+        :javascript
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        .fb-like{"data-action" => "like", "data-href" => "https://facebook.com/symeapp", "data-layout" => "button_count", "data-share" => "false", "data-show-faces" => "true"}
+    .row.info
+      .col-md-12
+        %h3 Invite friends to join Syme
+        %h4{style: 'color: gray'} Share on Facebook
+        .fb-send{"data-colorscheme" => "dark", "data-href" => "https://getsyme.com"}
+        %h4{style: 'color: gray'} Share by e-mail
+        %form.form-inline{:role => "form", style: 'margin-top: 30px'}
+          .form-group
+            %label.sr-only{:for => "exampleInputEmail2"} Email address
+            %input#exampleInputEmail2.form-control{:placeholder => "Enter a friend's e-mail", :type => "email"}
+          %a.button{:href => "/"} Invite
+          / <button type="submit" class="btn btn-primary">Notify me</button>

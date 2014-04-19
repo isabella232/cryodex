@@ -1,0 +1,23 @@
+%body#blog
+  = haml :'layout/navbar_static'
+  #posts
+    .container
+      .row
+        .col-md-8.col-md-push-2
+          - @posts.each do |date, post|
+            .post
+              %a.pic{href: "/blog/#{post['slug']}"}
+                %img.img-responsive{alt: "blogpost", src: post['photo_url']}/
+              .title
+                %a{href: "/blog/#{post['slug']}"}
+                  = post['title']
+              .author
+                %img.avatar{alt: "author", src: post['avatar_url'] }/
+                = post['author'] + ', ' + Date.parse(date).strftime
+              %p.intro
+                - @content = File.read(File.join('.', 'posts', date + '.md'))
+                = @content.split(' ').slice(0,70).join(' ') + ' ...'
+              %a.continue-reading{href: "/blog/#{post['slug']}"}
+                Continue reading this post →
+
+  = haml :'layout/footer'

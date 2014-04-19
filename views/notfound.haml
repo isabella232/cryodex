@@ -1,0 +1,24 @@
+!!!
+%html.not-found-page
+  %head
+    %meta{charset: "UTF-8"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title React - Bootstrap Theme
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    / stylesheets
+    %link{href: "css/compiled/theme.css", rel: "stylesheet", type: "text/css"}/
+    / javascript
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    %script{src: "js/bootstrap/bootstrap.min.js"}
+    %script{src: "js/vendor/sketch.min.js"}
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  %body#not-found.not-found-page
+    .info
+      %h1 404
+      %p Sorry, that page doesn't exist.
+      %p.go-back
+        Thanks for noticing—we're going to fix it up and have things back to normal soon.
+        Go back to the
+        %a{href: "/"}
+          home page.

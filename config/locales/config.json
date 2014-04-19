@@ -1,0 +1,8 @@
+{
+  "config": {
+    "timestamp": {
+      "en": "%d/%m/%Y at %H:%M",
+      "fr": "Le %d/%m/%Y à %H:%M"
+    }
+  }
+}
