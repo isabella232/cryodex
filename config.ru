@@ -20,7 +20,7 @@ when :development
 end
 
 # Setup server-side sessions.
-use Rack::Session::Memcache,
+use Rack::Session::Cookie,
   key: 'session',
   expire_after: 60 * 60 * 24 * 3,
   secure: $env == :production,
