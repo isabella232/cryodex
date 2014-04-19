@@ -1,20 +1,24 @@
-#blog
-  #posts
-    .container
-      .row
-        .col-md-8.col-md-push-2
-          - @posts.each do |date, post|
-            .post
-              %a.pic{href: "/blog/#{post['slug']}"}
-                %img.img-responsive{alt: "blogpost", src: post['photo_url']}/
-              .title
+%section.part
+  .row
+    .large-12.column
+      - @posts.each do |date, post|
+        %article
+          .row.title
+            .large-12.column
+              %h6
                 %a{href: "/blog/#{post['slug']}"}
                   = post['title']
-              .author
-                %img.avatar{alt: "author", src: post['avatar_url'] }/
-                = post['author'] + ', ' + Date.parse(date).strftime
-              %p.intro
-                - @content = File.read(File.join('.', 'posts', date + '.md'))
-                = @content.split(' ').slice(0,70).join(' ') + ' ...'
-              %a.continue-reading{href: "/blog/#{post['slug']}"}
-                Continue reading this post →
+          %p
+            %a{href: "/blog/#{post['slug']}"}
+              %img{alt: "blogpost", src: post['photo_url']}/
+          %p
+            %i
+              By
+              = post['author']
+              on
+              = Date.parse(date).strftime
+          %p
+            - @content = File.read(File.join('.', 'posts', date + '.md'))
+            = @content.split(' ').slice(0,70).join(' ') + ' ...'
+          %p.text-center
+            %a.button{href: "/blog/#{post['slug']}"} Read More
