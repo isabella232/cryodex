@@ -1,16 +1,19 @@
+.breadcrumb-container
+  .row
+    .large-12.column
+      %nav.breadcrumbs.animated.bounceInDown
+        %a{href: "/"} Home
+        %a.current{href: "#"} Blog
 %section.part
   .row
     .large-12.column
       - @posts.each do |date, post|
-        %article
-          .row.title
+        %article{style: 'padding-top: 1.5rem; padding-bottom: 1.5rem'}
+          .row.title{style: 'text-align: left; height: 3em;'}
             .large-12.column
               %h6
                 %a{href: "/blog/#{post['slug']}"}
                   = post['title']
-          %p
-            %a{href: "/blog/#{post['slug']}"}
-              %img{alt: "blogpost", src: post['photo_url']}/
           %p
             %i
               By
@@ -20,5 +23,4 @@
           %p
             - @content = File.read(File.join('.', 'posts', date + '.md'))
             = @content.split(' ').slice(0,70).join(' ') + ' ...'
-          %p.text-center
-            %a.button{href: "/blog/#{post['slug']}"} Read More
+            %a{href: "/blog/#{post['slug']}"} [Read More]

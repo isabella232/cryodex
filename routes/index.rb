@@ -33,7 +33,8 @@ get '/blog/:path' do |path|
   
   not_found if post.empty?
   date = @posts.key(@post)
-
+  @key = date.dup
+  
   path = "./posts/#{date}.md"
   not_found unless File.readable?(path)
   
