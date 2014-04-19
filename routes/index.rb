@@ -88,8 +88,12 @@ get '/unsubscribe/:email/:token' do |email, token|
 end
 
 get '/*' do |path|
-  not_found unless ['blog', 'comingsoon', 'faq', 'notfound', 'security'].include?(path)
+  
+  not_found unless ['blog', 'comingsoon', 'faq', 'notfound', 'features'].include?(path)
+  
   @user_id = Digest::SHA2.hexdigest(request.ip.to_s)
   Analytics.track(user_id: @user_id, event: 'view_' + path)
+  
   haml path.to_sym
+  
 end

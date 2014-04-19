@@ -1,5 +1,4 @@
-%body#blog
-  = haml :'layout/navbar_static'
+#blog
   #posts
     .container
       .row
@@ -19,5 +18,3 @@
                 = @content.split(' ').slice(0,70).join(' ') + ' ...'
               %a.continue-reading{href: "/blog/#{post['slug']}"}
                 Continue reading this post →
-
-  = haml :'layout/footer'
