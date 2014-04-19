@@ -1,0 +1,2 @@
+.popover-inside
+  %a.popover-menu#logout{ href: '#' } Logout

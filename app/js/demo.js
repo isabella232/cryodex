@@ -1,0 +1,3 @@
+$(document).ready(function(){
+  $("body").append('<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-22779122-1"]);_gaq.push(["_trackPageview"]);(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()</script>');
+  });

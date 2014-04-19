@@ -1,0 +1,26 @@
+%p{ style: 'margin: 0 0 1em 0;' }
+  // Hi,
+  Hi
+  = locals[:name]
+  ,
+
+%p{ style: 'margin: 0 0 1em 0;' }
+  %img{ src: locals[:inviter_avatar], style: "border-radius: 5px; float: left; margin: 0 15px 15px 0; width: 48px;", width: '48px', height: '48px' }
+
+  %strong
+    = locals[:inviter_name]
+
+  wants to share
+
+  %a{ href: "https://app.filequote.io/show/#{locals[:space_id]}", style: 'font-weight: normal; color: #3498db; text-decoration: none;' }
+    = locals[:file_name]
+
+  with you on FileQuote.
+
+%p{ style: 'margin: 0 0 1em 0; ' }
+  If the link above doesn't work, you can copy this link into your browser:
+  = "https://app.filequote.io/show/#{locals[:space_id]}"
+
+%p{ style: 'margin: 0 0 1em 0;' }
+  Best,<br />
+  The Team at FileQuote

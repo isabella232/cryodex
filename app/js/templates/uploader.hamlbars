@@ -1,0 +1,98 @@
+%section#hero
+  .row
+    .large-10.large-centered.column.text-center
+      #hero-message.fadeInDown.animated
+        %h1 Secure your data in the cloud
+        %h4 Database encryption, auditing and compliance as a service
+        %a.button{href: "signup.html"} SIGN UP FOR A PLAN
+%section.part
+  .row.title
+    .large-12.column
+      %h6 WHAT CRYODEX OFFERS
+  .row.features.spacy
+    .large-4.column
+      %h4 End-to-end encryption
+      %p Cryodex transparently encrypts data before it leaves your servers, providing end-to-end data security and centralized key management.
+    .large-4.column
+      %h4 Audits and reports
+      %p Keep track of who accessed what with detailed logs and audit trails. Cryodex makes it a breeze to meet HIPAA and PCI-DSS compliance requirements.
+    .large-4.column
+      %h4 Power of the cloud
+      %p Our unique architecture integrates with the cloud storage provider of your choice while offering closed-door security.
+  .row.features.spacy
+    .large-4.column
+      %h4.no-top-margin Easy integration
+      %p Integrate Cryodex in your existing application in less than 10 lines of code. Our security gateway works behind the scenes to protect your data.
+    .large-4.column
+      %h4.no-top-margin Preserve function
+      %p Security that breaks applications is pointless. We use cutting-edge technology to preserve the format and function of encrypted data in the cloud.
+    .large-4.column
+      %h4.no-top-margin Any database
+      %p Cryodex transparently layers on top of any database, including both NoSQL and traditional SQL storage solutions.
+  .row
+    .large-12.column.text-center
+      %a.button{href: "features.html"} View Full Features List
+%section.part
+  .row.title
+    .large-12.column
+      %h6 Pick a plan
+  .row
+    .large-12.column
+      .row
+        .large-4.column
+          %ul.pricing-table
+            %li.title Developer
+            %li.price
+              $25.99
+              %span / month
+            %li.bullet-item
+              %strong Unlimited
+              audit logs
+            %li.bullet-item
+              %strong 1
+              database
+            %li.bullet-item
+              %strong 1
+              server
+            %li.bullet-item Basic encryption
+            %li.bullet-item Data integrity protection
+            %li.cta-button
+              %a.button{href: "signup.html"} Get Started
+        .large-4.column
+          %ul.pricing-table.highlight
+            %li.title Business
+            %li.price
+              $99.99
+              %span / month
+            %li.bullet-item
+              %strong Unlimited
+              audit logs
+            %li.bullet-item
+              %strong 5
+              databases
+            %li.bullet-item
+              %strong 10
+              servers
+            %li.bullet-item Function-preserving encryption
+            %li.bullet-item Data integrity protection
+            %li.cta-button
+              %a.button{href: "signup.html"} Get Started
+        .large-4.column
+          %ul.pricing-table
+            %li.title Enterprise
+            %li.price
+              $399.99
+              %span / month
+            %li.bullet-item
+              %strong Unlimited
+              audit logs
+            %li.bullet-item
+              %strong Unlimited
+              databases and servers
+            %li.bullet-item Function-preserving encryption
+            %li.bullet-item Data integrity protection
+            %li.bullet-item 24/7 tech support
+            %li.cta-button
+              %a.button{href: "signup.html"} Get Started
+%a#back-top{href: "#"}
+  %i.icon-caret-up

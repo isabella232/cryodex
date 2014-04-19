@@ -1,0 +1,15 @@
+%img.file-icon{ src: '/img/file-document.png' }
+
+%a.big.file-download{ href: '{{url}}', download: '{{name}}' } DOWNLOAD
+
+.filesinfo-wrapper
+  .file-name
+    {{name_without_extension}}<span class="file-ext">.{{extension}}</span>
+
+    %span.file-size {{filesize size}}
+
+  .file-info
+    %a.inline.file-download{ href: '{{url}}', download: '{{name}}' } Download
+
+//%span.file-others
+//  and <a href="#">8 other files</a>

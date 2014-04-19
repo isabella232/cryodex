@@ -1,0 +1,15 @@
+#login-providers
+  %p
+    %strong Login
+    or
+    %strong Register
+    below
+
+  %a{ href: '/auth/facebook', :'data-provider' => 'facebook'}
+    %i.fa.fa-facebook
+
+  %a{ href: '/auth/twitter', :'data-provider' => 'twitter'}
+    %i.fa.fa-twitter
+
+  %a{ href: '/auth/google', :'data-provider' => 'google'}
+    %i.fa.fa-google-plus

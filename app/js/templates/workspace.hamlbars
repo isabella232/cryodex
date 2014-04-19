@@ -1,0 +1,16 @@
+#space-info
+  #filesinfo
+
+  #membersinfo
+
+#container-bottom.nobounce
+  #bottom-sticker
+    #overflow-container
+      #space-first-message
+
+      %ul#messages
+
+
+%form#container-form
+  %textarea{ placeholder: 'Type a message here...' }
+  %a{ href: '#' }

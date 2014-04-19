@@ -1,0 +1,10 @@
+%a.user{ href: '#' }
+  {{#if online}}
+  %span.status.online
+  {{else}}
+  %span.status.offline
+  {{/if}}
+  %span.name {{name}}
+
+%a.remove
+  %i.fa.fa-times

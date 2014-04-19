@@ -1,0 +1,38 @@
+%a{href: '/show/{{id}}'}
+
+  {{#if is_admin}}
+  %span.delete{href: '#'}
+    %i.fa.fa-trash-o
+  {{/if}}
+
+  %span.space-list-header
+    %span.space-list-header-name
+      %strong {{readable_name}}
+
+      {{#compare notification_count 0}}
+      // Something
+      {{else}}
+      %span.badge {{notification_count}}
+      {{/compare}}
+
+  %span.space-list-info
+
+    {{#if is_admin}}
+
+    %span.space-list-info-people-count
+      %strong
+        Created by {{admin_name}} on {{created_at}}
+          
+    //and
+
+    //%span.space-list-info-people-count
+    //  %strong
+    //    {{other_people_count}} other people
+
+    {{else}}
+
+    %span.space-list-info-people-count
+      %strong
+        Created by you on {{created_at}}
+
+    {{/if}}

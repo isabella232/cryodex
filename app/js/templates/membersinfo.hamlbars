@@ -1,0 +1,16 @@
+%a.user.current{ href: '#' }
+  {{#if online}}
+  %span.status.online
+  {{else}}
+  %span.status.offline
+  {{/if}}
+  %span.name {{name}}
+
+posted this file and is sharing it with
+
+%ul#members
+
+%a#users-add-button{ href: '#' }
+  + add
+
+%input#users-add{ type: 'text' }

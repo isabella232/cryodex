@@ -1,0 +1,2 @@
+<script type="text/javascript">var islrsharing = true; var islrsocialcounter = false;</script> <script type='text/javascript' src='//share.loginradius.com/Content/js/LoginRadius.js' id='lrsharescript'></script> <script type="text/javascript"> LoginRadius.util.ready(function () { $i = $SS.Interface.horizontal; $SS.Providers.Top = ["Facebook","Twitter","GooglePlus"]; $u = LoginRadius.user_settings; $u.sharecounttype='url';$u.apikey='db869e19-c183-424b-8845-f3504fa4d9b7'; $i.size = 32; $i.show("lrsharecontainer"); }); </script>
+<div class="lrsharecontainer"></div>

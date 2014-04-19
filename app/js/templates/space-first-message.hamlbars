@@ -1,0 +1,6 @@
+%i#large-icon.fa.fa-files-o
+
+This is the beginning of the discussion history for
+<strong>{{file_name}}</strong>,
+which was uploaded by <em>{{admin_name}}</em> on {{created_at}}. Anything
+you write here can be seen by the people listed above.

@@ -1,0 +1,18 @@
+%span.message-actions
+  {{#if is_owner}}
+  %a.message-delete{ href: '#' }
+    %i.fa.fa-times
+  {{/if}}
+  
+  // %a.message-permalink{ href: '#' }
+  //   <i class="fa fa-link"></i>
+  //   %span.message-permalink-copy
+  //     %span.keystroke ⌘+C
+  //     to copy
+
+%img.message-avatar{ src: '{{poster_avatar_url}}' }
+
+%a.message-sender{ href: '#' } {{poster}}
+%a.message-created-at{ href: '#' } {{created_at}}
+
+.content {{content}}
