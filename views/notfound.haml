@@ -1,24 +1,13 @@
-!!!
-%html.not-found-page
-  %head
-    %meta{charset: "UTF-8"}/
-    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %title React - Bootstrap Theme
-    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-    / stylesheets
-    %link{href: "css/compiled/theme.css", rel: "stylesheet", type: "text/css"}/
-    / javascript
-    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
-    %script{src: "js/bootstrap/bootstrap.min.js"}
-    %script{src: "js/vendor/sketch.min.js"}
-    /[if lt IE 9]
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  %body#not-found.not-found-page
-    .info
-      %h1 404
-      %p Sorry, that page doesn't exist.
-      %p.go-back
-        Thanks for noticing—we're going to fix it up and have things back to normal soon.
-        Go back to the
-        %a{href: "/"}
-          home page.
+%section.part
+  .row
+    .large-12.column.text-center
+      %h1 Page not found
+      %h6 Looks like the page you're looking for was moved or never existed.
+      %h6 Make sure you typed the correct URL or followed a valid link.
+      .row
+        .large-12.column
+          %a.button{:href => "index.html"} Return Home
+          %p
+            or
+            %a{:href => "contact.html"} contact us
+            about the problem.
