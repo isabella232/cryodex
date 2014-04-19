@@ -15,6 +15,24 @@
       = haml :'layout/navbar'
     
     %section#main{role: "main"}
+      #signup-modal{ style: 'display: none; width: 100%; text-align: center;' }
+        %section.part
+          #sign-up{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
+            %form.text-center{action: "signup.html", method: "post"}
+              .row.title
+                .large-12.column
+                  %h6 Be the first to know
+              .row
+                %p Cryodex is launching soon. Leave us your e-mail to get in early.
+              .row
+                .large-centered.columns{ style: 'padding: 0'}
+                  %input{placeholder: "Name", type: "text"}/
+              .row
+                .large-centered.columns{ style: 'padding: 0'}
+                  %input{placeholder: "Email", type: "text"}/
+              .row
+                .columns
+                  %button{type: "submit"} Sign Up
       = yield
     
     %footer
@@ -63,15 +81,16 @@
             %i.icon-envelope
           %a{href: "#"}
             %i.icon-rss
-          %a{href: "https://www.facebook.com/pages/Cryodex", target: "_blank"}
+          %a{href: "https://www.facebook.com/pages/Cryodex/230132050510127", target: "_blank"}
             %i.icon-facebook
-          %a{href: "https://www.facebook.com/cryodex", target: "_blank"}
+          %a{href: "https://www.twitter.com/cryodex", target: "_blank"}
             %i.icon-twitter
           %a{href: "https://plus.google.com/b/109403914239795493872/", target: "_blank"}
             %i.icon-google-plus
           %a{href: "//www.linkedin.com", target: "_blank"}
             %i.icon-linkedin
     %script{src: "/assets/vendor/jquery.js"}
+    %script{src: "/assets/vendor/jquery.modal.min.js"}
     %script{src: "/assets/vendor/foundation/foundation.js"}
     %script{src: "/assets/vendor/foundation/foundation.topbar.js"}
     %script{src: "/assets/vendor/foundation/foundation.section.js"}

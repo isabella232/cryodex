@@ -89,7 +89,7 @@ end
 
 get '/*' do |path|
   
-  not_found unless ['blog', 'comingsoon', 'faq', 'notfound', 'features'].include?(path)
+  not_found unless ['blog', 'contact', 'notfound', 'features', 'signup'].include?(path)
   
   @user_id = Digest::SHA2.hexdigest(request.ip.to_s)
   Analytics.track(user_id: @user_id, event: 'view_' + path)
