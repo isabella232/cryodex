@@ -2,6 +2,18 @@
 
 $(document).ready(function () {
 
+  $('#plan1').on('click', function () {
+    mixpanel.track('click_plan_1', {});
+  });
+  
+  $('#plan2').on('click', function () {
+    mixpanel.track('click_plan_2', {});
+  });
+  
+  $('#plan3').on('click', function () {
+    mixpanel.track('click_plan_3', {});
+  });
+
   $('.signup-button').on('click', function () {
     $('#hero-signup-form').submit();
   });

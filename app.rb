@@ -10,8 +10,8 @@ module SymeShowcase
     Bundler.require :default,
       settings.environment
 
-    # Initialize segment.io analytics
-    Analytics.init(secret: '193d1167c7e3e40725c3efafa45e1b03')
+    Analytics = AnalyticsRuby
+    Analytics.init({ secret: 'uqjvovhrrg' })
 
     configure { require_all 'config'  }
     helpers   { require_all 'helpers' }
