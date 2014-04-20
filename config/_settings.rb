@@ -26,5 +26,4 @@ end
 
 set :root, File.dirname(__FILE__)
 
-Analytics.init(secret: 'k6g05c9wep')
 set :email_salt, '"a$$#!%@&Fe39n#?*4n4C$ni'

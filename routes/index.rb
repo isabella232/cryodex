@@ -7,7 +7,6 @@ end
 
 get '/' do
   @user_id = Digest::SHA2.hexdigest(request.ip.to_s)
-  Analytics.track(user_id: @user_id, event: 'view_index')
   haml :index
 end
 
@@ -93,7 +92,6 @@ get '/*' do |path|
   not_found unless ['blog', 'contact', 'notfound', 'features', 'signup'].include?(path)
   
   @user_id = Digest::SHA2.hexdigest(request.ip.to_s)
-  Analytics.track(user_id: @user_id, event: 'view_' + path)
   
   haml path.to_sym
   

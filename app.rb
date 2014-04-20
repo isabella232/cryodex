@@ -10,9 +10,6 @@ module SymeShowcase
     Bundler.require :default,
       settings.environment
 
-    Analytics = AnalyticsRuby
-    Analytics.init({ secret: 'uqjvovhrrg' })
-
     configure { require_all 'config'  }
     helpers   { require_all 'helpers' }
 
