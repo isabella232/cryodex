@@ -1,13 +1,13 @@
 development:
   sessions:
     default:
-      database: asocial
+      database: cryodex
       hosts:
         - localhost:27017
 production:
   sessions:
     default:
-      database: asocial
+      database: cryodex
       hosts:
         - localhost:27017
   options:

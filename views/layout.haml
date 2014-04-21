@@ -21,10 +21,14 @@
       = haml :'layout/navbar'
     
     %section#main{role: "main"}
+      #thank-you-modal{ style: 'display: none; width: 100%; text-align: center;' }
+        %section.part
+          #thank-you{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
+            %p Thank you for contacting us! We will be in touch with you shortly.
       #signup-modal{ style: 'display: none; width: 100%; text-align: center;' }
         %section.part
           #sign-up{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
-            %form.text-center{action: "signup.html", method: "post"}
+            %form#form-subscribe.text-center{action: "signup.html", method: "post"}
               .row.title
                 .large-12.column
                   %h6 Be the first to know
@@ -32,7 +36,7 @@
                 %p Leave us your e-mail to be the first one to know when Cryodex launches.
               .row
                 .large-centered.columns{ style: 'padding: 0'}
-                  %input{placeholder: "Email", type: "text"}/
+                  %input{placeholder: "Email", type: "text", name: "email"}/
               .row
                 .columns
                   %button{type: "submit"} Sign Up

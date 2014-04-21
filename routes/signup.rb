@@ -3,7 +3,12 @@ post '/signup' do
   email = params[:email].strip.downcase
   ip    = @env['REMOTE_ADDR']
 
-  requester = Subscriber.new(email: email, ip: ip)
+  requester = Subscriber.new({
+    email: email, ip: ip,
+    name: params[:name],
+    message: params[:message],
+    title: params[:title]
+  })
 
   begin
     requester.save!

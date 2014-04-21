@@ -5,6 +5,9 @@ class Subscriber
 
   field :email, type: String
   field :ip, type: String
+  field :name, type: String
+  field :message, type: String
+  field :title, type: String
 
 
   validates :email, presence:   { message: 'email_cannot_be_blank' },

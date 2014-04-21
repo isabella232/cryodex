@@ -9,27 +9,27 @@
     .row.title
       .large-12.column
         %h6 Get a free consultation
-    .row
+    #contact-main.row
       .large-7.column
         %p
           Please complete the form to get further information on our technology, pricing and availability. If your inquiry is urgent, please contact us at the telephone number below.
-        %form{:action => "contact.html", :method => "post"}
+        %form#form-contact{:action => "contact.html", :method => "post"}
           .row
             .large-8.column
               %label Name:
-              %input{:type => "text"}/
+              %input{:type => "text", name: "name"}/
           .row
             .large-8.column
               %label Email:
-              %input{:type => "text"}/
+              %input{:type => "text", name: "email"}/
           .row
             .large-12.column
               %label Job title:
-              %input{:type => "text"}/
+              %input{:type => "text", name: "title"}/
           .row
             .large-12.column
               %label Message:
-              %textarea
+              %textarea{name: "message"}
           .row
             .large-12.column
               %button Send Message

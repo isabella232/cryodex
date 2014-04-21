@@ -2,7 +2,7 @@ class SubscriberObserver < Mongoid::Observer
 
   def after_create(requester)
 
-    Mailer.send_welcome(requester.email)
+    # Mailer.send_welcome(requester.email)
 
   end
 

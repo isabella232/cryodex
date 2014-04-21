@@ -12,8 +12,10 @@
   
 };
 
-.close-modal {
+.modal a {
   margin-left: auto !important;
+  color: white !important;
+  font-weight: bold;
 }
 
 h4 {
