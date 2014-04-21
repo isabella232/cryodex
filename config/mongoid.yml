@@ -5,11 +5,7 @@ development:
       hosts:
         - localhost:27017
 production:
-  sessions:
-    default:
-      database: cryodex
-      hosts:
-        - localhost:27017
+  uri: <%= ENV['MONGOHQ_URL'] %>
   options:
     allow_dynamic_fields: false
     identity_map_enabled: true
