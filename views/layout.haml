@@ -25,6 +25,10 @@
         %section.part
           #thank-you{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
             %p Thank you for contacting us! We will be in touch with you shortly.
+      #error-modal{ style: 'display: none; width: 100%; text-align: center;' }
+        %section.part
+          #error{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
+            %p An error has occurred. Please ensure all fields are filled out correctly.
       #signup-modal{ style: 'display: none; width: 100%; text-align: center;' }
         %section.part
           #sign-up{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
@@ -46,14 +50,13 @@
       .row.spacy
         .large-6.column
           %h4 About us
-          %p Cryodex is designed and built by Syme Labs, an IT security firm based in Montreal, Canada.
-          %p Syme Labs was founded in December 2012 with the mission of making encryption more accessible on the web.
+          %p Cryodex is designed and built by Syme Labs, an organization based in Montreal, Canada.
+          %p Syme Labs was founded in December 2012 with the mission of addressing the growing need for privacy in the cloud.
           %p
-            Since then, our team has led several
-            %a{href: "https://github.com/symeapp"} open source efforts
+            Since then, our team has led several open source efforts
             to make encryption safer and easier for developers to use. Our
-            %a{href: "https://getsyme.com"} work
-            has received international press coverage and has been featured in security blogs across the world.
+            %a{href: "https://github.com/symeapp/syme"} work
+            on multi-party end-to-end encrypted communications has received international press coverage.
           %p With Cryodex, Syme Labs is putting the power of cutting-edge encryption technology into the hands of developers.
         .large-4.column
           %h4 Contact
@@ -62,7 +65,7 @@
               %h6 Address:
             .small-9.column
               %p
-                180 Sherbrooke West
+                51 Sherbrooke West
                 %br/
                 Montreal, Canada
           .row

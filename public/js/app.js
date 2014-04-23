@@ -49,7 +49,9 @@ $(document).ready(function () {
       },
       
       error: function () {
-        alert('An error has occurred.');
+        
+        $('#error-modal').modal();
+        
       }
       
     });
