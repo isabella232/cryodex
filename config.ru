@@ -32,6 +32,7 @@ use Rack::Protection, except: [:http_origin, :remote_token]
 
 require './app'
 
+
 map '/assets' do
 
   environment = Sprockets::Environment.new

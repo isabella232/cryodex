@@ -1,3 +1,5 @@
+@import "filoxenia.css";
+
 .brand {
 
   cursor: auto;
@@ -20,4 +22,42 @@
 
 h4 {
   font-size: 20px;
+}
+
+
+#hero-signup-form {
+  margin-top: 3rem;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  #hero-signup-form {
+    margin-top: 2rem;
+    padding: 0 15%;
+  }
+}
+#hero-signup-form input, #hero-signup-form button {
+  height: 40px;
+}
+#hero-signup-form input[type="email"] {
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  height: 45px;
+  padding: 0 1rem;
+  width: 250px;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -webkit-transition: 0.2s border ease-in-out, box-shadow 0.2s ease-in-out;
+}
+@media (max-width: 767px) {
+  #hero-signup-form input[type="email"] {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+#hero-signup-form input[type="email"]:focus {
+  border: 3px solid #63a7ed;
 }

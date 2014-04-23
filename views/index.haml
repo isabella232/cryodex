@@ -4,7 +4,12 @@
       #hero-message.fadeInDown.animated
         %h1 Secure your data in the cloud
         %h4 Transparent database encryption for developers
-        %a.button{href: "#signup-modal", rel: "modal:open"} SIGN UP FOR A PLAN
+        %form#hero-signup-form.animated.fadeIn{ method: 'post', action: '/post' }
+          %input{ type: 'email', placeholder: 'Your e-mail address', spellcheck: 'false', autocorrect: 'off', autocapitalize: 'off', autocomplete: 'off' }
+          %a.button{href: "#signup-modal", rel: "modal:open"}
+            SIGN UP
+            &nbsp;
+            %i.icon-chevron-right.icon-white
 %section.part
   .row.title
     .large-12.column
@@ -15,7 +20,7 @@
         %i.icon-lock
         &nbsp;
         End-to-end encryption
-      %p The Cryodex proxy applies strong AES-256 bit encryption to your database <i>before</i> information is sent to the cloud. Private encryption keys never leave your servers.
+      %p Stay in control of your data. Cryodex applies strong encryption to database records before they are sent to the cloud. Private encryption keys never leave your servers.
     .large-4.column
       %h4
         %i.icon-tasks
@@ -27,11 +32,11 @@
         %i.icon-cloud
         &nbsp;
         Easy integration
-      %p Integrate Cryodex in your existing application in less than 5 lines of code. Our security gateway works behind the scenes to protect your data and never gets in your way.
+      %p Integrate Cryodex in your existing application in less than 5 lines of code. Our encryption proxy works behind the scenes to protect your data.
       
   .row
     .large-12.column.text-center
-      %a.button{href: "/features"} Request more information
+      %a.button{href: "/contact"} Request more information
 %section.part
   .row.title
     .large-12.column

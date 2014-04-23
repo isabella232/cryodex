@@ -2,6 +2,10 @@
 
 $(document).ready(function () {
 
+  setTimeout(function () {
+    $('#hero-signup-form input[type="email"]').focus();
+  }, 500);
+  
   $('#plan1').on('click', function () {
     mixpanel.track('click_plan_1', {});
   });
@@ -65,7 +69,6 @@ $(document).ready(function () {
   $('.signup-same-page').on('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    $('#hero-signup-form input').focus();
   });
   
   $('#hero-signup-form, #bottom-signup-form').on('submit', function (e) {

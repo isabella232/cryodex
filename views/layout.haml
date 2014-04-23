@@ -24,7 +24,7 @@
       #thank-you-modal{ style: 'display: none; width: 100%; text-align: center;' }
         %section.part
           #thank-you{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
-            %p Thank you for contacting us! We will be in touch with you shortly.
+            %p Thank you for contacting us! You should hear back from us shortly.
       #error-modal{ style: 'display: none; width: 100%; text-align: center;' }
         %section.part
           #error{ style: 'width: 300px; margin-left: auto; margin-right: auto; padding: 25px; background-color: #dddddd'}
@@ -35,15 +35,15 @@
             %form#form-subscribe.text-center{action: "signup.html", method: "post"}
               .row.title
                 .large-12.column
-                  %h6 Be the first to know
+                  %h6 Request an invitation
               .row
-                %p Leave us your e-mail to be the first one to know when Cryodex launches.
+                %p Cryodex is currently in closed beta. Leave us your e-mail below to request early access.
               .row
                 .large-centered.columns{ style: 'padding: 0'}
                   %input{placeholder: "Email", type: "text", name: "email"}/
               .row
                 .columns
-                  %button{type: "submit"} Sign Up
+                  %button{type: "submit"} Request invitation
       = yield
     
     %footer
@@ -57,7 +57,7 @@
             to make encryption safer and easier for developers to use. Our
             %a{href: "https://github.com/symeapp/syme"} work
             on multi-party end-to-end encrypted communications has received international press coverage.
-          %p With Cryodex, Syme Labs is putting the power of cutting-edge encryption technology into the hands of developers.
+          %p With Cryodex, Syme Labs is putting the power of cutting-edge encryption technology into the hands of developers and enabling the cloud for businesses.
         .large-4.column
           %h4 Contact
           .row
