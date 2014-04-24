@@ -6,13 +6,25 @@ $(document).ready(function () {
     $('#hero-signup-form input[type="email"]').focus();
   }, 500);
   
+  $('#features').on('click', function () {
+    mixpanel.track('click_menu_1', {});
+  });
+  
+  $('#blog').on('click', function () {
+    mixpanel.track('click_menu_2', {});
+  });
+  
+  $('#contact').on('click', function () {
+    mixpanel.track('click_menu_3', {});
+  });
+  
   $('#signup').on('click', function () {
     mixpanel.track('click_navbar_button', {});
   });
   
   $('#hero-signup-button').on('click', function () {
-    mixpanel.track('click_hero_button', {});
     $('#hero-signup-form').submit();
+    mixpanel.track('click_hero_button', {});
   });
   
   $('#request-info').on('click', function () {
