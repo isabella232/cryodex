@@ -5,8 +5,8 @@
         %h1 Secure your data in the cloud
         %h4 Transparent database encryption for developers
         %form#hero-signup-form.animated.fadeIn{ method: 'post', action: '/post' }
-          %input{ type: 'email', placeholder: 'Your e-mail address', spellcheck: 'false', autocorrect: 'off', autocapitalize: 'off', autocomplete: 'off' }
-          %a.button{href: "#signup-modal", rel: "modal:open"}
+          %input{ type: 'email', name: 'email', placeholder: 'Your e-mail address', spellcheck: 'false', autocorrect: 'off', autocapitalize: 'off', autocomplete: 'off' }
+          %a#herok-signup-button.button
             SIGN UP
             &nbsp;
             %i.icon-chevron-right.icon-white
@@ -36,7 +36,7 @@
       
   .row
     .large-12.column.text-center
-      %a.button{href: "/contact"} Request more information
+      %a#request-info.button{href: "/contact"} Request more information
 %section.part
   .row.title
     .large-12.column

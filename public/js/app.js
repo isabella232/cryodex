@@ -6,6 +6,19 @@ $(document).ready(function () {
     $('#hero-signup-form input[type="email"]').focus();
   }, 500);
   
+  $('#signup').on('click', function () {
+    mixpanel.track('click_navbar_button', {});
+  });
+  
+  $('#hero-signup-button').on('click', function () {
+    mixpanel.track('click_hero_button', {});
+    $('#hero-signup-form').submit();
+  });
+  
+  $('#request-info').on('click', function () {
+    mixpanel.track('click_page_button', {});
+  });
+  
   $('#plan1').on('click', function () {
     mixpanel.track('click_plan_1', {});
   });
@@ -18,7 +31,7 @@ $(document).ready(function () {
     mixpanel.track('click_plan_3', {});
   });
   
-  $('#form-subscribe, #form-contact').on('submit', function (e) {
+  $('#hero-signup-form, #form-subscribe, #form-contact').on('submit', function (e) {
     
     e.preventDefault();
     e.stopPropagation();
@@ -44,9 +57,10 @@ $(document).ready(function () {
       success: function () {
 
         if ($('#contact-main').length > 0) {
-          name.val(''); email.val('');
-          msg.val(''); title.val('');
+          name.val(''); msg.val(''); title.val('');
         }
+        
+        email.val('');
         
         $('#thank-you-modal').modal();
 
@@ -61,36 +75,10 @@ $(document).ready(function () {
     });
     
   });
-
-  $('.signup-button').on('click', function () {
-    $('#hero-signup-form').submit();
-  });
   
   $('.signup-same-page').on('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-  });
-  
-  $('#hero-signup-form, #bottom-signup-form').on('submit', function (e) {
-    e.preventDefault();
-    var email = $(this).find('input').val();
-    
-    $.ajax('/signup', {
-    
-      type: 'POST',
-      
-      data: { email: email },
-      
-      success: function () {
-        window.location = '/comingsoon';
-      },
-      
-      error: function () {
-        alert('Not a valid e-mail!');
-      }
-      
-    });
-    
   });
   
 });
